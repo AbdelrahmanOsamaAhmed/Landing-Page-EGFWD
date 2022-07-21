@@ -1,3 +1,3 @@
 # Landing-Page-EGFWD
 Manipulating the dom.
-Adding and Removing contents.
+Adding and Removing content.
