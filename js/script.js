@@ -122,4 +122,18 @@ document.getElementById('button2').addEventListener('click',function(){
     i--;
 })
 
+window.addEventListener('scroll',function(){
+    const sections = this.document.querySelectorAll('section');
+    for (let section of sections){
+        const pos = section.getBoundingClientRect();
+        if (pos.bottom >= 300 || pos.top >= 50){
+            section.classList.add('your-active-class');
+        }
+        
+        else {
+            section.classList.remove('your-active-class');
+        }
+    }
+})
+
 
