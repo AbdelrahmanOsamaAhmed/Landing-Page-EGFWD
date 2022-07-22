@@ -126,7 +126,7 @@ window.addEventListener('scroll',function(){
     const sections = this.document.querySelectorAll('section');
     for (let section of sections){
         const pos = section.getBoundingClientRect();
-        if (pos.bottom >= 300 || pos.top >= 50){
+        if (pos.bottom >= this.window.innerHeight-300 && pos.bottom< this.window.innerHeight){
             section.classList.add('your-active-class');
         }
         
