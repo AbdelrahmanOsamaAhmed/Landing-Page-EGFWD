@@ -124,14 +124,37 @@ document.getElementById('button2').addEventListener('click',function(){
 
 window.addEventListener('scroll',function(){
     const sections = this.document.querySelectorAll('section');
+    const links = this.document.querySelectorAll('.menu__link');
+    
     for (let section of sections){
         const pos = section.getBoundingClientRect();
         if (pos.bottom >= this.window.innerHeight-300 && pos.bottom< this.window.innerHeight){
+            //adding section highlight
             section.classList.add('your-active-class');
+
+
+            //adding highlight from navbar
+            for (let link of links){
+                if (link.href.includes(section.id)){
+                    link.style = 'color: #fff; background: #333;';
+                }
+            }
+
+
         }
         
         else {
+            //removing section highlight
             section.classList.remove('your-active-class');
+
+            //removine highlight from navbar
+            for (let link of links){
+                if (link.href.includes(section.id)){
+                    link.style = 'color: #000; background: #fff;';
+                }
+            }
+
+
         }
     }
 })
