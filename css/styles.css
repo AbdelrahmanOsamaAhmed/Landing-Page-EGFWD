@@ -7,9 +7,7 @@
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
 */
-*{
-    scroll-behavior: smooth;
-}
+
 
 /* ---- Base Rules ---- */
 body {

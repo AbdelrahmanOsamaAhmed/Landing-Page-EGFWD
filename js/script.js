@@ -58,6 +58,20 @@
 // Scroll to section on link click
 
 // Set sections as active
+
+
+// implementaion of smooth scroll function
+const scrollSmoothly = function(e){
+    e.preventDefault();
+    const href = this.getAttribute("href");
+    const offsetTop = document.querySelector(href).offsetTop;
+    scroll({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+}
+
+
 let i = 1;
 
 while (i<4){
@@ -66,11 +80,23 @@ while (i<4){
     nav.textContent = "Section "+i;
     nav.href = "#section"+i;
     nav.classList.add('menu__link');
+
+    //adding smooth scroll functionality
+    nav.addEventListener('click',scrollSmoothly)
+
+
     const li = document.createElement('li')
     li.appendChild(nav);
-    list.appendChild(li);
     i++;
+    let id_section = "#section"+i;
+    const sections = this.document.querySelectorAll('section');
+
+    
+    list.appendChild(li);
+    
 }
+
+
 
 
 
@@ -84,9 +110,16 @@ document.getElementById('button1').addEventListener('click',function(){
     nav.textContent = "Section "+i;
     nav.href = "#section"+i;
     nav.classList.add('menu__link');
+
+    //adding smooth scroll functionality
+    nav.addEventListener('click',scrollSmoothly)
+
+
     const li = document.createElement('li')
     li.appendChild(nav);
+    
     list.appendChild(li);
+
 
 
 
@@ -137,6 +170,10 @@ window.addEventListener('scroll',function(){
             for (let link of links){
                 if (link.href.includes(section.id)){
                     link.style = 'color: #fff; background: #333;';
+                    /*
+                    this cancels the hover effect.
+                    I couldn't figure out how to fix it nor even what is causing the problem!
+                    */
                 }
             }
 
