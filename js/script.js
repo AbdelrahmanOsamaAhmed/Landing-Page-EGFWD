@@ -74,27 +74,19 @@ const scrollSmoothly = function(e){
 
 let i = 1;
 
-while (i<4){
-    const nav = document.createElement('a');
-    const list = document.getElementById('navbar__list');
-    nav.textContent = "Section "+i;
-    nav.href = "#section"+i;
-    nav.classList.add('menu__link');
-
-    //adding smooth scroll functionality
-    nav.addEventListener('click',scrollSmoothly)
-
-
-    const li = document.createElement('li')
-    li.appendChild(nav);
-    i++;
-    let id_section = "#section"+i;
-    const sections = this.document.querySelectorAll('section');
-
-    
-    list.appendChild(li);
-    
-}
+    const sections = Array.from(document.getElementsByTagName("section")); 
+    const menu = document.getElementById('navbar__list');
+    for (let section of sections){
+        const listItem = document.createElement('li');
+        const listItemLink = document.createElement('a');
+        listItemLink.textContent = section.dataset.nav;
+        listItemLink.href = "#section"+i;
+        i++;
+        listItemLink.addEventListener('click',scrollSmoothly)
+        listItemLink.classList.add('menu__link');
+        listItem.appendChild(listItemLink);
+        menu.appendChild(listItem);
+    }
 
 
 
