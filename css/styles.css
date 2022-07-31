@@ -141,7 +141,7 @@ section {
 .navbar__menu a {
     text-decoration: none;
     margin-right: 15px;
-    /*color:#000;*/
+    color:#000;
 }
 .navbar__menu li {
     display: inline-block;
