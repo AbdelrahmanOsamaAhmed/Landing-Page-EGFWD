@@ -161,7 +161,8 @@ window.addEventListener('scroll',function(){
             //adding highlight from navbar
             for (let link of links){
                 if (link.href.includes(section.id)){
-                    link.style = 'color: #fff; background: #333;';
+                    //link.style = 'color: #fff; background: #333;';
+                    link.classList.add('active');
                     /*
                     this cancels the hover effect.
                     I couldn't figure out how to fix it nor even what is causing the problem!
@@ -179,7 +180,9 @@ window.addEventListener('scroll',function(){
             //removine highlight from navbar
             for (let link of links){
                 if (link.href.includes(section.id)){
-                    link.style = 'color: #000; background: #fff;';
+                    //link.style = 'color: #000; background: #fff;';
+                    link.classList.remove('active');
+
                 }
             }
 
